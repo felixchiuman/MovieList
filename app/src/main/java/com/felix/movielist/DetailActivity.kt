@@ -6,8 +6,6 @@ import com.felix.movielist.network.Status
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import androidx.compose.ui.layout.ContentScale
-import coil.imageLoader
 import coil.load
 import com.felix.movielist.databinding.ActivityDetailBinding
 import com.felix.movielist.view.MainPageActivity

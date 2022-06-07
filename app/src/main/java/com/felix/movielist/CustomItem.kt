@@ -15,11 +15,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import coil.compose.rememberAsyncImagePainter
-import coil.compose.rememberImagePainter
-import coil.size.Scale
-import coil.transform.CircleCropTransformation
 import com.felix.movielist.model.playingNow.Result
 
 const val IMAGE_BASE ="https://image.tmdb.org/t/p/w500"
@@ -34,7 +30,7 @@ fun CustomItem(movie: Result, navigateToDetail: (Int) -> Unit) {
         }
         .height(110.dp), shape = RoundedCornerShape(8.dp), elevation = 4.dp)
     {
-        Surface() {
+        Surface {
             Row(
                 modifier = Modifier
                     .background(Color.White)
