@@ -2,6 +2,7 @@ package com.felix.movielist
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Card
@@ -23,11 +24,14 @@ import com.felix.movielist.model.playingNow.Result
 
 const val IMAGE_BASE ="https://image.tmdb.org/t/p/w500"
 @Composable
-fun CustomItem(movie: Result) {
+fun CustomItem(movie: Result, navigateToDetail: (Int) -> Unit) {
 
     Card(modifier = Modifier
         .padding(16.dp, 8.dp)
         .fillMaxWidth()
+        .clickable {
+            navigateToDetail(movie.id)
+        }
         .height(110.dp), shape = RoundedCornerShape(8.dp), elevation = 4.dp)
     {
         Surface() {

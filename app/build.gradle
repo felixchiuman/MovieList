@@ -35,6 +35,7 @@ android {
     }
     buildFeatures {
         compose true
+        viewBinding true
     }
     composeOptions {
         kotlinCompilerExtensionVersion compose_version
@@ -87,4 +88,6 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.4.1'
 
     implementation "androidx.compose.runtime:runtime-livedata:$compose_version"
+
+    implementation 'com.squareup.picasso:picasso:2.71828'
 }

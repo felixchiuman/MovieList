@@ -1,5 +1,6 @@
 package com.felix.movielist.view
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.ComponentActivity
@@ -24,6 +25,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
 import com.felix.movielist.CustomItem
+import com.felix.movielist.DetailActivity
 import com.felix.movielist.model.playingNow.GetAllPlayingNowResponse
 import com.felix.movielist.network.Resource
 import com.felix.movielist.network.Status
@@ -37,29 +39,36 @@ class MainPageActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
+            val context = LocalContext.current
+
             MovieListTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.primary
                 ) {
-                    MovieScreen()
+                    MovieScreen{
+                        val intent = Intent(context,DetailActivity::class.java)
+                        intent.putExtra("id",it)
+                        startActivity(intent)
+                    }
                 }
             }
         }
     }
 }
 @Composable
-fun MovieScreen() {
+fun MovieScreen(navigateToDetail: (Int) -> Unit) {
     val vm = getViewModel<MainPageViewModel>()
     val resource by vm.playingNow.observeAsState()
     vm.getAllPlayingNow()
-    MovieList(resource)
+    MovieList(resource, navigateToDetail = navigateToDetail)
 }
 
 @Composable
 fun MovieList(
-    resource: Resource<GetAllPlayingNowResponse>?
+    resource: Resource<GetAllPlayingNowResponse>?,
+    navigateToDetail: (Int) -> Unit
 ) {
     when (resource?.status){
         Status.LOADING -> {
@@ -85,7 +94,7 @@ fun MovieList(
             val data = resource.data?.results ?: emptyList()
             LazyColumn{
                 items(items = data){ movie ->
-                    CustomItem(movie = movie)
+                    CustomItem(movie = movie, navigateToDetail = navigateToDetail)
                 }
             }
         }
