@@ -17,7 +17,8 @@
             android:layout_height="192dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:scaleType="fitXY"/>
 
         <ImageView
             android:id="@+id/iv_back"
@@ -34,7 +35,8 @@
             android:layout_height="140dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/iv_backdrop"
-            android:layout_margin="16dp" />
+            android:layout_margin="16dp"
+            android:scaleType="fitXY"/>
 
         <TextView
             android:id="@+id/tv_detail_title"

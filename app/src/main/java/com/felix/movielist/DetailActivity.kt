@@ -6,10 +6,12 @@ import com.felix.movielist.network.Status
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.compose.ui.layout.ContentScale
+import coil.imageLoader
+import coil.load
 import com.felix.movielist.databinding.ActivityDetailBinding
 import com.felix.movielist.view.MainPageActivity
 import com.felix.movielist.viewModel.MovieDetailViewModel
-import com.squareup.picasso.Picasso
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class DetailActivity : AppCompatActivity() {
@@ -39,10 +41,9 @@ class DetailActivity : AppCompatActivity() {
                 Status.SUCCESS -> {
                     binding.tvDetailTitle.text = resource.data?.title
                     binding.tvDescDetail.text = resource.data?.overview
-                    Picasso.get().load(IMAGE_BASE + resource.data?.backdropPath).fit()
-                        .into(binding.ivBackdrop)
-                    Picasso.get().load(IMAGE_BASE + resource.data?.posterPath).fit()
-                        .into(binding.ivPoster)
+
+                    binding.ivBackdrop.load(IMAGE_BASE+resource.data?.backdropPath)
+                    binding.ivPoster.load(IMAGE_BASE+resource.data?.posterPath)
                     progressDialog.dismiss()
                 }
                 Status.ERROR -> {
