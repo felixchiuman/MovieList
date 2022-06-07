@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "570032048499",
+    "project_id": "ticketin-2132b",
+    "storage_bucket": "ticketin-2132b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:570032048499:android:9774b31ba8e941e8f09d06",
+        "android_client_info": {
+          "package_name": "com.felix.movielist"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "570032048499-5rpfe5o9uum4eoib94mif04phf24pb35.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCNRLn8kw1l3wY-o2G8gxhpM6bYVjwwZ5w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "570032048499-5rpfe5o9uum4eoib94mif04phf24pb35.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:570032048499:android:d4be34054bdcd0b8f09d06",
+        "android_client_info": {
+          "package_name": "com.felix.ticketin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "570032048499-5rpfe5o9uum4eoib94mif04phf24pb35.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCNRLn8kw1l3wY-o2G8gxhpM6bYVjwwZ5w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "570032048499-5rpfe5o9uum4eoib94mif04phf24pb35.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
