@@ -24,21 +24,21 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Checkout the code
-      - uses: actions/checkout@v3
+        uses: actions/checkout@v3
 
       #Setup JDK
       - name: Set Up JDK
-      - uses: actions/setup-java@v1
+        uses: actions/setup-java@v1
         with:
           java-version: 11
           
       #Add Execute permission for Gradle Wrapper
       - name: Change wrapper permissions
-      - run: chmod +x ./gradlew
+        run: chmod +x ./gradlew
         
       #Running Unit Test
       - name: Run Tests
-      - run: ./gradlew test
+        run: ./gradlew test
         
       - name: Build Project
-      - run: ./gradlew build
+        run: ./gradlew build
