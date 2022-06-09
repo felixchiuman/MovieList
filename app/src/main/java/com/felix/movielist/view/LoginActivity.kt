@@ -282,13 +282,13 @@ fun InputForm(auth: FirebaseAuth) {
     }
 }
 
-@Preview(showBackground = true, showSystemUi = true)
-@Composable
-fun DefaultPreview() {
-    MovieListTheme {
-        Column {
-            LoginScreen()
-            InputForm(Firebase.auth)
-        }
-    }
-}
+//@Preview(showBackground = true, showSystemUi = true)
+//@Composable
+//fun DefaultPreview() {
+//    MovieListTheme {
+//        Column {
+//            LoginScreen()
+//            InputForm(Firebase.auth)
+//        }
+//    }
+//}
